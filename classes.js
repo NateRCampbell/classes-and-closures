@@ -30,7 +30,17 @@
 */
 
 //Code Here
-
+class Employee{
+  constructor(first_name, last_name, email, age){
+    this.first_name= first_name;
+    this.last_name = last_name;
+    this.email= email;
+    this.age = age;
+  } 
+  makeWidget(){
+    return `${this.first_name} ${this.last_name} Widget`
+  }
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -48,6 +58,19 @@
 */
 
 //Code Here
+
+class Manager extends Employee {
+  constructor (first_name, last_name, email, age){
+    super (first_name, last_name, email, age)
+    this.report = [];
+  }
+   hire(employee){
+    this.report.push[employee]
+  }
+  fire(i){
+    delete this.report[i]
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -73,7 +96,29 @@
 
 //Code Here
 
+class ProgressiveManager extends Manager {
+  constructor (first_name, last_name, email, age, report){
+    super (first_name, last_name, email, age, report)
+    this.title = 'Not a manager'
+    this.bonus = 0
+  }
+  bonus(){
+    if(this.report === 0){
+      return this.title = 'Not a manager'
+    } else if (this.report > 0 && this.report < 4){
+      return this.title = 'Barely Manager'
+    } else if (this.report > 3 && this.report < 10){
+      return this.title = 'Mostly Manager'
+    } else if (this.report > 10 && this.report < 51){
+      return this.title = 'Manager'
+    } else if (this.report > 50 && this.report < 101){
+      return this.title = 'Manager Plus'
+    } else if (this.report >101){
+      return this.title = 'Bestest Manager'
+    } else return
+  }
 
+}
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
